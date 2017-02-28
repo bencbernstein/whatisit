@@ -31,12 +31,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         guard let image_data = UIImagePNGRepresentation(imageSmaller!) else { return }
         print("imagedata after classify is \(image_data)")
         watson.UploadRequest(image: image_data, completion: { (data) in
-//            print("data is \(data)")
-//            guard let imageDict = data["images"] as? [Any] else { return print ("couldn't get imagedict") }
-//            print("imageDict is \(imageDict)")
-//            guard let classifiers = imageDict[0] as? [String: Any] else { return print ("couldn't get classifiers") }
-//            print("clasifiers are \(classifiers)")
-//            guard let classes = classifiers
+            print("data is \(data)")
+            guard let imageDict = data["images"] as? [Any] else { return print ("couldn't get imagedict") }
+            print("imageDict is \(imageDict)")
+            guard let classifiers = imageDict[0] as? [String: Any] else { return print ("couldn't get classifiers") }
+            print("clasifiers are \(classifiers)")
+            guard let classeArray = classifiers["classifiers"] as? [Any] else { return print ("couldn't get classes") }
+            print("classeeArray is \(classeArray)")
+            guard let classess = classeArray[0] as? [String: Any] else { return print ("couldn't get arrayClass") }
+            print("classes is \(classess)")
+           
 //
 //        
             //guard let classifiers = imageDict[0] as? String else { return print ("couldn't get classifiers") }

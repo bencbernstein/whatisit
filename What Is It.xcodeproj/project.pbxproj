@@ -132,7 +132,7 @@
 				TargetAttributes = {
 					B55DE1481E660AA3000177CC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = R2Y4F8J6CR;
+						DevelopmentTeam = SRFS2YY3XR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -347,10 +347,11 @@
 			baseConfigurationReference = FF16FD9FFC01461025A0F7BA /* Pods-What Is It.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R2Y4F8J6CR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SRFS2YY3XR;
 				INFOPLIST_FILE = "What Is It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.burningflowers.oneminuteworkout.What-Is-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.burningflowers.oneminuteworkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -361,10 +362,11 @@
 			baseConfigurationReference = B1CB5B3D698D51817B475715 /* Pods-What Is It.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R2Y4F8J6CR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = SRFS2YY3XR;
 				INFOPLIST_FILE = "What Is It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.burningflowers.oneminuteworkout.What-Is-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.burningflowers.oneminuteworkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
