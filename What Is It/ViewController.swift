@@ -11,55 +11,61 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let watson = Watson()
-
-
-    @IBAction func pickImage(_ sender: Any) {
+    
+    @IBOutlet weak var resultsLabel: UILabel!
+    
+    @IBAction func pickImage(_ sender: UIButton) {
         let ImagePicker = UIImagePickerController()
         ImagePicker.delegate = self
-        ImagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        if sender.titleLabel?.text == "Photo Gallery" {
+            ImagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        } else {
+            ImagePicker.sourceType = .camera
+        }
         
         self.present(ImagePicker, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var tellMeButton: UIButton!
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         image.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) { 
+            self.tellMeButton.alpha = 1
+            self.resultsLabel.alpha = 0
+        }
     }
-
-    @IBAction func classify(_ sender: Any) {
+    
+    
+    @IBAction func tellMeWhatItIs(_ sender: Any) {
         let imageSmaller = image.image!.resized(withPercentage: 0.25)
         guard let image_data = UIImagePNGRepresentation(imageSmaller!) else { return }
-        print("imagedata after classify is \(image_data)")
-        watson.UploadRequest(image: image_data, completion: { (data) in
-            print("data is \(data)")
-            guard let imageDict = data["images"] as? [Any] else { return print ("couldn't get imagedict") }
-            print("imageDict is \(imageDict)")
-            guard let classifiers = imageDict[0] as? [String: Any] else { return print ("couldn't get classifiers") }
-            print("clasifiers are \(classifiers)")
-            guard let classeArray = classifiers["classifiers"] as? [Any] else { return print ("couldn't get classes") }
-            print("classeeArray is \(classeArray)")
-            guard let classess = classeArray[0] as? [String: Any] else { return print ("couldn't get arrayClass") }
-            print("classes is \(classess)")
-           
-//
-//        
-            //guard let classifiers = imageDict[0] as? String else { return print ("couldn't get classifiers") }
-            //print("classifiers is \(classifiers)")
+        self.tellMeButton.alpha = 0
+        self.resultsLabel.alpha = 1
+        self.resultsLabel.text = "I'm thinking, hang on!..."
+        watson.UploadRequest(image: image_data, completion: { (returnClasses) in
+            
+            self.resultsLabel.text = self.watson.interpretResults(results: returnClasses)
         })
     }
+    
+    
     @IBOutlet weak var image: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           }
-
+        tellMeButton.alpha = 0.0
+        resultsLabel.text = "Choose a picture to get started!"
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
 
