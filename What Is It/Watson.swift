@@ -86,6 +86,14 @@ class Watson {
         otherToReturn.characters.removeLast()
         otherToReturn.characters.removeLast()
         
+        if topToReturn ==  "I'm quite sure that's a " {
+            return otherToReturn
+        }
+        
+        if middleToReturn == "Also thinking" {
+            return topToReturn +  "\n" + otherToReturn
+        }
+        
         return topToReturn + "\n" + middleToReturn + "\n" + otherToReturn
     }
     

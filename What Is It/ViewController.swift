@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     let watson = Watson()
     
@@ -57,8 +57,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         tellMeButton.alpha = 0.0
         resultsLabel.text = "Choose a picture to get started!"
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        gestureRecognizer.delegate = self
+        image.addGestureRecognizer(gestureRecognizer)
+        image.isUserInteractionEnabled = true
         
     }
+    
+    func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        print("tapped")
+        let ImagePicker = UIImagePickerController()
+        ImagePicker.delegate = self
+        ImagePicker.sourceType = .camera
+        self.present(ImagePicker, animated: true, completion: nil)
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

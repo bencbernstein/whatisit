@@ -20,19 +20,16 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTK-km-J25">
-                                <rect key="frame" x="-46" y="202" width="466.5" height="262.5"/>
-                                <color key="backgroundColor" red="0.86930885183856432" green="0.91406222883903809" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RTK-km-J25" secondAttribute="height" multiplier="16:9" id="yJm-Ag-iKf"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTK-km-J25">
+                                <rect key="frame" x="56" y="141" width="262.5" height="318.5"/>
+                                <color key="backgroundColor" red="0.9818109924041738" green="0.98726851851851849" blue="0.98507528744663797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkG-gp-ZXL">
-                                <rect key="frame" x="6" y="20" width="150" height="66.5"/>
+                                <rect key="frame" x="16" y="20" width="150" height="66.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
                                 <state key="normal" title="Photo Gallery"/>
                                 <connections>
@@ -47,14 +44,14 @@
                                     <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LVO-DD-ffs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-R6-mmF">
-                                <rect key="frame" x="37" y="591" width="300" height="26"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-R6-mmF">
+                                <rect key="frame" x="37" y="592" width="300" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhe-2k-fgJ">
-                                <rect key="frame" x="-46" y="511" width="466.5" height="44"/>
+                                <rect key="frame" x="56" y="505.5" width="262.5" height="44"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
                                 <state key="normal" title="Tell Me What It Is!"/>
                                 <connections>
@@ -65,17 +62,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AEc-R6-mmF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="5EV-hP-Cmu"/>
-                            <constraint firstItem="RTK-km-J25" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6uN-R0-VzW"/>
+                            <constraint firstItem="RTK-km-J25" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="6uN-R0-VzW"/>
                             <constraint firstItem="hly-Fm-MJB" firstAttribute="height" secondItem="FkG-gp-ZXL" secondAttribute="height" id="BaD-SM-pLS"/>
-                            <constraint firstItem="RTK-km-J25" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="GoK-jo-qi6"/>
+                            <constraint firstItem="RTK-km-J25" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="GoK-jo-qi6"/>
                             <constraint firstItem="Zhe-2k-fgJ" firstAttribute="top" secondItem="RTK-km-J25" secondAttribute="bottom" multiplier="1.1" id="J4S-QD-jAl"/>
-                            <constraint firstItem="FkG-gp-ZXL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="LQz-LX-JX7"/>
+                            <constraint firstItem="FkG-gp-ZXL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LQz-LX-JX7"/>
                             <constraint firstItem="RTK-km-J25" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="S2T-aq-yp1"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Vzk-0A-clh"/>
                             <constraint firstItem="RTK-km-J25" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wb0-h1-iiz"/>
+                            <constraint firstItem="AEc-R6-mmF" firstAttribute="centerX" secondItem="Zhe-2k-fgJ" secondAttribute="centerX" id="XyE-d2-O2K"/>
                             <constraint firstItem="Zhe-2k-fgJ" firstAttribute="centerX" secondItem="RTK-km-J25" secondAttribute="centerX" id="aw8-6m-ax0"/>
-                            <constraint firstItem="AEc-R6-mmF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gmy-F6-u0i"/>
-                            <constraint firstItem="AEc-R6-mmF" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-50" id="hbn-wm-PX3"/>
+                            <constraint firstItem="AEc-R6-mmF" firstAttribute="centerY" secondItem="Zhe-2k-fgJ" secondAttribute="centerY" id="h7o-h2-SuO"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="j8I-BL-ima"/>
                             <constraint firstItem="hly-Fm-MJB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lZo-H3-a06"/>
                             <constraint firstItem="hly-Fm-MJB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="pWa-k7-qTz"/>
