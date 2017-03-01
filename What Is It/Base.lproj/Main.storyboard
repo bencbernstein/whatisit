@@ -44,8 +44,8 @@
                                     <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LVO-DD-ffs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-R6-mmF">
-                                <rect key="frame" x="37" y="592" width="300" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-R6-mmF">
+                                <rect key="frame" x="37" y="515" width="300" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,6 +58,9 @@
                                     <action selector="tellMeWhatItIs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEH-pG-K2r"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uHr-rN-LNO">
+                                <rect key="frame" x="37" y="594" width="300" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,6 +71,7 @@
                             <constraint firstItem="Zhe-2k-fgJ" firstAttribute="top" secondItem="RTK-km-J25" secondAttribute="bottom" multiplier="1.1" id="J4S-QD-jAl"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LQz-LX-JX7"/>
                             <constraint firstItem="RTK-km-J25" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="S2T-aq-yp1"/>
+                            <constraint firstItem="uHr-rN-LNO" firstAttribute="centerX" secondItem="AEc-R6-mmF" secondAttribute="centerX" id="TZe-qz-TTD"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Vzk-0A-clh"/>
                             <constraint firstItem="RTK-km-J25" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wb0-h1-iiz"/>
                             <constraint firstItem="AEc-R6-mmF" firstAttribute="centerX" secondItem="Zhe-2k-fgJ" secondAttribute="centerX" id="XyE-d2-O2K"/>
@@ -75,6 +79,8 @@
                             <constraint firstItem="AEc-R6-mmF" firstAttribute="centerY" secondItem="Zhe-2k-fgJ" secondAttribute="centerY" id="h7o-h2-SuO"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="j8I-BL-ima"/>
                             <constraint firstItem="hly-Fm-MJB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lZo-H3-a06"/>
+                            <constraint firstItem="uHr-rN-LNO" firstAttribute="width" secondItem="AEc-R6-mmF" secondAttribute="width" id="lm4-N0-pzX"/>
+                            <constraint firstItem="uHr-rN-LNO" firstAttribute="top" secondItem="AEc-R6-mmF" secondAttribute="bottom" multiplier="1.1" id="p6d-pc-uE3"/>
                             <constraint firstItem="hly-Fm-MJB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="pWa-k7-qTz"/>
                             <constraint firstItem="FkG-gp-ZXL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q2M-BP-Z3L"/>
                             <constraint firstItem="Zhe-2k-fgJ" firstAttribute="width" secondItem="RTK-km-J25" secondAttribute="width" id="tjc-gq-d4L"/>
@@ -83,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="RTK-km-J25" id="S1B-ob-fJa"/>
+                        <outlet property="progressView" destination="uHr-rN-LNO" id="DH9-2p-fXF"/>
                         <outlet property="resultsLabel" destination="AEc-R6-mmF" id="Bpq-Gi-thB"/>
                         <outlet property="tellMeButton" destination="Zhe-2k-fgJ" id="Qun-cy-6fq"/>
                     </connections>

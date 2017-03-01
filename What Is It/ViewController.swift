@@ -13,6 +13,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let watson = Watson()
     
     @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var tellMeButton: UIButton!
+    @IBOutlet weak var image: UIImageView!
     
     @IBAction func pickImage(_ sender: UIButton) {
         let ImagePicker = UIImagePickerController()
@@ -25,8 +28,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         self.present(ImagePicker, animated: true, completion: nil)
     }
-    
-    @IBOutlet weak var tellMeButton: UIButton!
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         image.image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -41,18 +42,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imageSmaller = image.image!.resized(withPercentage: 0.25)
         guard let image_data = UIImagePNGRepresentation(imageSmaller!) else { return }
         self.tellMeButton.alpha = 0
+        progressView.alpha = 1
         self.resultsLabel.alpha = 1
         self.resultsLabel.text = "I'm thinking, hang on!..."
-        watson.UploadRequest(image: image_data, completion: { (returnClasses) in
-            
+        watson.uploadRequest(image: image_data, completion: { (returnClasses) in
             self.resultsLabel.text = self.watson.interpretResults(results: returnClasses)
+            self.progressView.alpha = 0
+        }, progressCompletion: { (progress) in
+            self.progressView.progress = Float(progress)
         })
+        
     }
     
-    
-    @IBOutlet weak var image: UIImageView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tellMeButton.alpha = 0.0
@@ -65,7 +67,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
-        print("tapped")
         let ImagePicker = UIImagePickerController()
         ImagePicker.delegate = self
         ImagePicker.sourceType = .camera
